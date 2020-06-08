@@ -47,7 +47,7 @@ See `./apollo/schema.js` for available Graphql queries, mutations, and subscript
 
 Check out the [Postman collection](https://www.getpostman.com/collections/7d0a362df80400358a6d)
 
-### Testing
+## Testing
 
 To test, use Postman to sign up and create tweets.
 
