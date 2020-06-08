@@ -42,3 +42,7 @@ Log out - `POST /log_out`
 ### Tweeting
 
 See `./apollo/schema.js` for available Graphql queries, mutations, and subscriptions
+
+### Postman Collection
+
+Check out the [Postman collection](https://www.getpostman.com/collections/7d0a362df80400358a6d)
