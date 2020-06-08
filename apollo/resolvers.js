@@ -1,3 +1,7 @@
+const pubSub = require('../pub-sub/pub-sub');
+
+const TWEET_ADDED = 'TWEET_ADDED';
+
 module.exports = {
   Query: {
     hello: (_, args) => `Hello ${args.from}`,
@@ -7,7 +11,14 @@ module.exports = {
   },
   Mutation: {
     tweet: (_, args, {req, dataSources}) => {
-      return dataSources.Tweets.createTweet(req.user.id, args.message);
+      let tweet = dataSources.Tweets.createTweet(req.user.id, args.message);
+      pubSub.publish(TWEET_ADDED, { tweetAdded: tweet });
+      return tweet;
+    }
+  },
+  Subscription: {
+    tweetAdded: {
+      subscribe: () => pubSub.asyncIterator([TWEET_ADDED])
     }
   },
   Tweet: {

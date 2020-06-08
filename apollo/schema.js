@@ -22,4 +22,7 @@ module.exports = gql`
   type Mutation {
     tweet(message: String!): Tweet
   }
+  type Subscription {
+    tweetAdded: Tweet
+  }
 `;
