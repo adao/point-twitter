@@ -16,9 +16,9 @@ To start the server, run:
 node index.js
 ```
 
-### API
+## API
 
-Authentication endpoints are
+### Authentication 
 
 Login - `POST /log_in`
 ```json
